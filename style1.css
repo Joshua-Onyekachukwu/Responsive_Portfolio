@@ -1,0 +1,112 @@
+/* About Section */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    background: var(--second-bg-color);
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Futuristic Background Animation */
+.about::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #00ff88, #007bff, #ff1d15, #df8908);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.about-content {
+    max-width: 60%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.about-skills {
+    max-width: 40%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-skills h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.about-skills ul {
+    list-style: none;
+}
+
+.about-skills li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 20px;
+}
+
+.about-skills li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    text-shadow: 0 0 10px var(--main-color);
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content, .about-skills {
+        max-width: 100%;
+    }
+
+    .about-skills ul {
+        text-align: left;
+    }
+}
